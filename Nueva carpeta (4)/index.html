@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio Peniel - Presencia de Dios</title>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+body{
+margin:0;
+font-family:Arial;
+background:#000000;
+color:rgb(255, 255, 255);
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 20px;
+background:#111;
+}
+
+.navbar ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+.navbar a{
+color:rgb(255, 255, 255);
+text-decoration:none;
+}
+
+/* HERO */
+.hero{
+position:relative;
+height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.live{
+background:rgb(255, 0, 0);
+padding:5px 10px;
+border-radius:5px;
+}
+
+/* REDES */
+.social-container{
+text-align:center;
+padding:40px;
+background:#111;
+}
+
+.social a{
+color:white;
+font-size:30px;
+margin:0 15px;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="logo.jpg.png" height="40">
+    <span>Radio Peniel - PRESENCIA DE DIOS -</span>
+  </div>
+
+  <ul>
+    <li><a href="#radio">Radio</a></li>
+    <li><a href="versiculos.html">Versículos</a></li>
+    <li><a href="INFORMACION.HTML">Información</a></li>
+    <li><a href="#fotos">Fotos</a></li>
+  </ul>
+</nav>
+
+<!-- HERO RADIO -->
+<section class="hero" id="radio">
+  <div>
+    <span class="live">EN VIVO</span>
+    <h1>Radio Peniel - PRESENCIA DE DIOS -</h1>
+    <p>Transmitiendo 24/7</p>
+
+    <audio controls autoplay>
+      <source src="https://stream.zeno.fm/ezts44pqqf8tv" type="audio/mpeg">
+    </audio>
+  </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Versículos | Radio Peniel</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0a0a0a;
+color:white;
+text-align:center;
+}
+
+header{
+background:#000;
+padding:30px;
+font-size:35px;
+font-weight:bold;
+box-shadow:0px 5px 20px black;
+}
+
+.versiculos{
+padding:60px 20px;
+}
+
+.titulo{
+font-size:40px;
+margin-bottom:40px;
+text-shadow:2px 2px 10px black;
+}
+
+.fb-container{
+display:flex;
+justify-content:center;
+}
+
+footer{
+margin-top:50px;
+padding:20px;
+background:#000;
+font-size:14px;
+}
+
+</style>
+
+</head>
+ 
+<body></body>
+
+<header>
+
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Radio Peniel | Publicaciones</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
+color:white;
+}
+
+header{
+background:black;
+padding:30px;
+text-align:center;
+font-size:35px;
+font-weight:bold;
+}
+
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+.titulo{
+font-size:35px;
+margin-bottom:40px;
+}
+
+.contenedor{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.caja{
+background:#111;
+padding:20px;
+border-radius:10px;
+box-shadow:0px 0px 20px black;
+}
+
+footer{
+background:black;
+text-align:center;
+padding:20px;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- VERSICULO DEL DIA -->
+
+<img id="versiculoDia" src="VERSICULOS/Proverbios 31 30/1.png" width="350" onclick="cambiarImagen()" style="cursor:pointer;">
+
+<script>
+function cambiarImagen(){
+    var img = document.getElementById("versiculoDia");
+
+    if(img.src.includes("1.png")){
+        img.src = "VERSICULOS/Proverbios 31 30/2.png";
+    } else {
+        img.src = "VERSICULOS/Proverbios 31 30/1.png";
+    }
+}
+</script>
+
+
+
+<!-- REDES -->
+<div class="social-container">
+<h2>Síganos en las redes</h2>
+
+<div class="social">
+
+<a href="https://www.facebook.com/profile.php?id=61576879132159" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/radiopenielpresenciadedios/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.youtube.com/@RadioPenielPresenciadeDios" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="https://whatsapp.com/channel/0029VbAwl3xGOj9gx5A5kV2Q" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+</div>
+
+<footer>
+© ARTES DE LA CRUZ FLOW MUSIC INC. 
+© Radio Peniel Presencia de Dios
+</footer>
+
+</body>
+</html>

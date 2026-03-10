@@ -1,0 +1,154 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+body{
+  background:#0f172a;
+  color:rgb(0, 0, 0);
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:#000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  width:40px;
+}
+
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.navbar a{
+  color:rgb(0, 0, 0);
+  text-decoration:none;
+}
+
+.navbar a:hover{
+  color:#000000;
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  background:center/cover url("PORTADA1.JNG.png");
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+}
+
+.hero-content{
+  position:relative;
+}
+
+.live{
+  background:red;
+  padding:5px 10px;
+  border-radius:15px;
+}
+
+
+
+.player{
+  margin-top:30px;
+  background:#D3AF37 ;
+  padding:15px;
+  border-radius:10px;
+}
+
+.social-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.social-container h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social a {
+  font-size: 32px;      /* Tamaño bonito */
+  color: white;        /* Color blanco */
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.social a:hover {
+  transform: scale(1.2);
+}
+
+
+/* SECCIONES */
+section{
+  padding:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#1e293b;
+  padding:10px;
+  border-radius:10px;
+}
+
+.card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.versiculo{
+text-align:center;
+margin:40px;
+}
+
+.versiculo img{
+width:260px;
+cursor:pointer;
+border-radius:10px;
+box-shadow:0 0 10px black;
+transition:0.3s;
+}
+
+.versiculo img:hover{
+transform:scale(1.05);
+}

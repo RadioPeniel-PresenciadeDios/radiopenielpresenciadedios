@@ -1,0 +1,48 @@
+const SHEET_ID = "1NWr3EK9hNT2BYDM0OG7I6HpRoym6JItbF94WTOeNi88";
+
+function doPost(e) {
+  const sheet = SpreadsheetApp.openById(SHEET_ID).getActiveSheet();
+  const data = JSON.parse(e.postData.contents);
+
+  if (data.action === "register") {
+
+    const id = Utilities.getUuid();
+    const hash = Utilities.base64Encode(data.password);
+
+    sheet.appendRow([
+      id,
+      data.nombre,
+      data.correo,
+      hash,
+      new Date(),
+      "usuario"
+    ]);
+
+    return response({status:"registered"});
+  }
+
+  if (data.action === "login") {
+
+    const rows = sheet.getDataRange().getValues();
+
+    for (let i = 1; i < rows.length; i++) {
+      if (rows[i][2] === data.correo &&
+          rows[i][3] === Utilities.base64Encode(data.password)) {
+
+        return response({
+          status:"success",
+          nombre: rows[i][1],
+          rol: rows[i][5]
+        });
+      }
+    }
+
+    return response({status:"error"});
+  }
+}
+
+function response(obj){
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}

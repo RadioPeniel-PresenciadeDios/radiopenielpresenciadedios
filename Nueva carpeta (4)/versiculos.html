@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Versículos Bíblicos</title>
+
+<style>
+
+body{
+background:#111;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:40px;
+}
+
+h1{
+margin-bottom:30px;
+}
+
+/* BOTON REGRESO */
+
+.boton-regreso{
+display:inline-block;
+margin-bottom:30px;
+padding:10px 20px;
+background:#ffd700;
+color:black;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.boton-regreso:hover{
+background:white;
+}
+
+/* GALERIA */
+
+.galeria{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.galeria img{
+width:250px;
+cursor:pointer;
+border-radius:10px;
+box-shadow:0 0 10px black;
+transition:0.3s;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="index.html" class="boton-regreso">⬅ Regresar</a>
+
+<h1>Versículos Bíblicos</h1>
+
+<div class="galeria">
+
+<img id="v1"
+src="VERSICULOS/Salmo 121 5/1.png"
+onclick="cambiar('v1','VERSICULOS/Salmo 121 5/1.png','VERSICULOS/Salmo 121 5/2.png')">
+
+<img id="v2"
+src="VERSICULOS/Juan 3 16/1.png"
+onclick="cambiar('v2','VERSICULOS/Juan 3 16/1.png','VERSICULOS/Juan 3 16/2.png')">
+
+<img id="v3"
+src="VERSICULOS/Hebreos 10 24/1.png"
+onclick="cambiar('v3','VERSICULOS/Hebreos 10 24/1.png','VERSICULOS/Hebreos 10 24/2.png')">
+
+<img id="v4"
+src="VERSICULOS/2 Corintios 4 18/1.png"
+onclick="cambiar('v4','VERSICULOS/2 Corintios 4 18/1.png','VERSICULOS/2 Corintios 4 18/2.png')">
+
+<img id="v5"
+src="VERSICULOS/2 Timoteo 4 7/1.png"
+onclick="cambiar('v5','VERSICULOS/2 Timoteo 4 7/1.png','VERSICULOS/2 Timoteo 4 7/2.png')">
+
+<img id="v6"
+src="VERSICULOS/Efesios 2 8 9/1.png"
+onclick="cambiar('v6','VERSICULOS/Efesios 2 8 9/1.png','VERSICULOS/Efesios 2 8 9/2.png')">
+
+
+
+</div>
+
+<script>
+
+function cambiar(id,img1,img2){
+
+let imagen = document.getElementById(id);
+
+if(imagen.src.includes("1.png")){
+imagen.src = img2;
+}else{
+imagen.src = img1;
+}
+
+}
+
+</script>
+
+</body>
+</html>

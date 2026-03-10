@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Radio Peniel - Sistema</title>
+<style>
+body{
+  font-family: Arial;
+  background:#0b1c2d;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.container{
+  background:#132c44;
+  padding:30px;
+  border-radius:15px;
+  width:320px;
+  text-align:center;
+}
+input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:none;
+  border-radius:8px;
+}
+button{
+  width:100%;
+  padding:10px;
+  background:#00c3ff;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover{
+  background:#0099cc;
+}
+.link{
+  cursor:pointer;
+  color:#00c3ff;
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="loginBox">
+<h2>Iniciar Sesión</h2>
+<input type="email" id="loginCorreo" placeholder="Correo">
+<input type="password" id="loginPass" placeholder="Contraseña">
+<button onclick="login()">Entrar</button>
+<p class="link" onclick="mostrarRegistro()">Crear cuenta</p>
+</div>
+
+<div class="container" id="registroBox" style="display:none;">
+<h2>Registro</h2>
+<input type="text" id="nombre" placeholder="Nombre">
+<input type="email" id="correo" placeholder="Correo">
+<input type="password" id="password" placeholder="Contraseña">
+<button onclick="register()">Registrarse</button>
+<p class="link" onclick="mostrarLogin()">Volver</p>
+</div>
+
+<div class="container" id="panel" style="display:none;">
+<h2 id="bienvenido"></h2>
+<button onclick="descargarExcel()">Descargar Base en Excel</button>
+<button onclick="logout()">Cerrar Sesión</button>
+</div>
+
+<script>
+const API = "PEGA_AQUI_TU_LINK";
+
+function mostrarRegistro(){
+  loginBox.style.display="none";
+  registroBox.style.display="block";
+}
+
+function mostrarLogin(){
+  registroBox.style.display="none";
+  loginBox.style.display="block";
+}
+
+function register(){
+  fetch(API,{
+    method:"POST",
+    body:JSON.stringify({
+      action:"register",
+      nombre:nombre.value,
+      correo:correo.value,
+      password:password.value
+    })
+  }).then(r=>r.json()).then(data=>{
+    alert("Registrado correctamente");
+    mostrarLogin();
+  });
+}
+
+function login(){
+  fetch(API,{
+    method:"POST",
+    body:JSON.stringify({
+      action:"login",
+      correo:loginCorreo.value,
+      password:loginPass.value
+    })
+  }).then(r=>r.json()).then(data=>{
+    if(data.status==="success"){
+      loginBox.style.display="none";
+      panel.style.display="block";
+      bienvenido.innerText="Bienvenido, "+data.nombre;
+    }else{
+      alert("Datos incorrectos");
+    }
+  });
+}
+
+function logout(){
+  location.reload();
+}
+
+function descargarExcel(){
+  window.open("https://docs.google.com/spreadsheets/d/1NWr3EK9hNT2BYDM0OG7I6HpRoym6JItbF94WTOeNi88/export?format=xlsx");
+}
+</script>
+
+</body>
+</html>
